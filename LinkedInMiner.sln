@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedInMiner", "LinkedInMiner\LinkedInMiner.csproj", "{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}.Debug|x86.ActiveCfg = Debug|x86
+		{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}.Debug|x86.Build.0 = Debug|x86
+		{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}.Release|x86.ActiveCfg = Release|x86
+		{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}.Release|x86.Build.0 = Release|x86
+		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Debug|x86.Build.0 = Debug|Any CPU
+		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Release|x86.ActiveCfg = Release|Any CPU
+		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = LinkedInMiner\LinkedInMiner.csproj
+	EndGlobalSection
+EndGlobal

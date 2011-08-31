@@ -1,0 +1,25 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LinkedInMiner/AnonTagParser.cs">
+    <Files>
+      <File FileName="LinkedInMiner/Main.cs" Line="19" Column="75" />
+      <File FileName="LinkedInMiner/AnonTagParser.cs" Line="244" Column="29" />
+      <File FileName="LinkedInMiner/Global.cs" Line="15" Column="1" />
+      <File FileName="LinkedInMiner/Crawler.cs" Line="132" Column="31" />
+      <File FileName="LinkedInMiner/Data.cs" Line="38" Column="11" />
+      <File FileName="LinkedInMiner/TagParser.cs" Line="41" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/bfm1009/Projects/LinkedInMiner/LinkedInMiner/Main.cs" line="123" />
+      <Breakpoint file="/Users/bfm1009/Projects/LinkedInMiner/LinkedInMiner/Main.cs" line="125" />
+      <Breakpoint file="/Users/bfm1009/Projects/LinkedInMiner/LinkedInMiner/Main.cs" line="140" />
+      <Breakpoint file="/Users/bfm1009/Projects/LinkedInMiner/LinkedInMiner/Main.cs" line="174" />
+      <Breakpoint file="/Users/bfm1009/Projects/LinkedInMiner/LinkedInMiner/Main.cs" line="169" />
+      <Breakpoint file="/Users/bfm1009/Projects/LinkedInMiner/LinkedInMiner/Main.cs" line="199" />
+      <Breakpoint file="/Users/bfm1009/Projects/LinkedInMiner/LinkedInMiner/Main.cs" line="210" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
