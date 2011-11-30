@@ -9,6 +9,9 @@
     <ProjectGuid>{14992B46-D084-47EF-8A0A-D0031335E0AE}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
-    <OutputPath>.\</OutputPath>
+    <OutputPath>.</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="CookieRefresh.sh" />
+  </ItemGroup>
 </Project>

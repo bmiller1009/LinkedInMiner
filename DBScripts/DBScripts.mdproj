@@ -9,6 +9,9 @@
     <ProjectGuid>{6B1CE496-49D8-4C27-A8C3-EE5576448A02}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
-    <OutputPath>.\</OutputPath>
+    <OutputPath>.</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="make_db.sql" />
+  </ItemGroup>
 </Project>
