@@ -1,41 +1,35 @@
 using System;
 using System.Net;
 using System.IO;
-using System.Text;
 using System.Text.RegularExpressions;
 using Logging;
+using LinkedInMiner.Tags;
 
 namespace LinkedInMiner
 {
 	class Crawler
 	{	
-		private string _url = String.Empty;
 		private string _cookie = String.Empty;
 		private Logger _logger;
 		
-		public Crawler(string url, Logger logger)
+		public Crawler(Logger logger)
 		{
-			_url = url;
 			_cookie = File.ReadAllText(Global.CookiePath);
 			_logger = logger;
 		}
 		
-		public string URL
-		{
-			get{return _url;}
-			set{_url = value;}
-		}
-
-		public void Post(int? semiKnownID) 
+		public void Post(int? semiKnownID, string url) 
 		{
        	    try
 			{	
-				_logger.AddLogMessage("Beginning HTTP Post.  URL='"+ _url + "'");
+				_logger.AddLogMessage("Beginning HTTP Post.  URL='"+ url + "'");
 				
-				//grab cookie authentication token from Firebug/Fiddler and add in here
-				string pagedata = String.Empty;
+				var pagedata = String.Empty;
+				var request = HttpWebRequest.Create(url) as HttpWebRequest;
 				
-				var request = HttpWebRequest.Create(_url) as HttpWebRequest;
+				if (request == null)
+					throw new Exception("Invalid Http Request.");
+				
 				//set the user agent so it looks like IE to not raise suspicion 
 				request.UserAgent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)";
 				request.Method = "GET";
@@ -76,13 +70,11 @@ namespace LinkedInMiner
 			try
 			{	
 				_logger.AddLogMessage("Extracting contacts from captured html...");
-				
-				string exp = @"<li id='vcard-recently-[0-9]' class='vcard[^>]*>\s*(.*\n)*?\s*</li>";
 	
-				var r = new Regex(exp);
+				var r = new Regex(@"<li id='vcard-recently-[0-9]' class='vcard[^>]*>\s*(.*\n)*?\s*</li>");
 				
 				foreach(Match m in r.Matches(html))	
-					DetermineParse(m.Value.Trim(), semiKnownID);
+					DetermineParse(m.Value, semiKnownID);
 				
 				_logger.AddLogMessage("Extraction of contacts from html is complete.");
 			}
@@ -100,30 +92,14 @@ namespace LinkedInMiner
 			
 			try
 			{
-				TagParser tp;
+				var tp = TagFactory.GetTagParser(htmlMatch, _logger, semiKnownID);
+				tp.ParseTag();
+				tp.EntryRecord.Save();
 				
-				if(htmlMatch.Contains("Anonymous LinkedIn User"))
-				{
-					tp = new AnonTagParser(htmlMatch, _logger);
-					tp.ParseTag();
-					tp.EntryRecord.Save();
-				}
-				else if(htmlMatch.Contains("redherring"))
-				{
-					tp = new SemiKnownTagParser(htmlMatch, _logger);
-					tp.ParseTag();
-					tp.EntryRecord.Save();
-					
-					_url = ((SemiKnownTagParser)tp).SemiKnownURL;
-					
-					Post(tp.EntryRecord.MainEntryID);
-				}
-				else
-				{
-					tp = new IdentTagParser(htmlMatch, _logger, semiKnownID);
-					tp.ParseTag();
-					tp.EntryRecord.Save();
-				}
+				var semiKnownTagParser = tp as SemiKnownTagParser;
+				
+				if(semiKnownTagParser != null)
+					Post(tp.EntryRecord.MainEntryID, semiKnownTagParser.SemiKnownURL);
 				
 				Console.WriteLine(tp);
 			}
@@ -138,4 +114,3 @@ namespace LinkedInMiner
 		}
 	}
 }
-

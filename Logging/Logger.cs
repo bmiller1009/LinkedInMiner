@@ -7,9 +7,9 @@ namespace Logging
     public class Logger
     {
         #region Data
-        private static object mLock = new object();
-
-        private static Logger mLogger = null;
+        
+		private static object _lock = new object();
+        private static Logger _logger = null;
 
         public static Logger Instance
         {
@@ -17,13 +17,13 @@ namespace Logging
             {
                 // If this is the first time were referring to the
                 // singleton object, the private variable will be null.
-                if (mLogger == null)
+                if (_logger == null)
                 {
                     // for thread safety, lock an object when
                     // instantiating the new Logger object. This prevents
                     // other threads from performing the same block at the
                     // same time.
-                    lock (mLock)
+                    lock (_lock)
                     {
                         // Two or more threads might have found a null
                         // mLogger and are therefore trying to create a 
@@ -32,47 +32,49 @@ namespace Logging
                         // Once the second thread can get through, mLogger
                         // will have already been instantiated by the first
                         // thread so test the variable again. 
-                        if (mLogger == null)
-                        {
-                            mLogger = new Logger();
-                        }
+                        if (_logger == null)
+                            _logger = new Logger();
                     }
                 }
-                return mLogger;
+				
+                return _logger;
             }
         }
 
-        private List<ILogger> mObservers;
+        private List<ILogger> _observers;
 
-        #endregion
+		#endregion Data
 
         #region Constructor
+		
         private Logger()
         {
-            mObservers = new List<ILogger>();
+            _observers = new List<ILogger>();
         }
-        #endregion
+		
+		#endregion Constructor
 
-        #region Public methods
+        #region Public Methods
+		
         public void RegisterObserver(ILogger observer)
         {
-            if (!mObservers.Contains(observer))
-                mObservers.Add (observer);
-            
+            if (!_observers.Contains(observer))
+                _observers.Add (observer);
         }
 
         public void AddLogMessage(string message)
         {
             // Apply some basic formatting like the current timestamp
-            string formattedMessage = string.Format("{0} - {1}", DateTime.Now.ToString(), message);
-            foreach (ILogger observer in mObservers)
+            var formattedMessage = string.Format("{0} - {1}", DateTime.Now.ToString(), message);
+			
+            foreach (var observer in _observers)
             	observer.ProcessLogMessage(formattedMessage);
-        }
+		}
 
         public void AddLogMessage(Exception ex)
         {
-            StringBuilder message = new StringBuilder(ex.Message);
-            string trace = ex.StackTrace;
+            var message = new StringBuilder(ex.Message);
+            var trace = ex.StackTrace;
 
             while (ex.InnerException != null)
             {
@@ -84,6 +86,7 @@ namespace Logging
 
             AddLogMessage(message.ToString());
         }
-        #endregion
+		
+		#endregion Public Methods
     }
 }

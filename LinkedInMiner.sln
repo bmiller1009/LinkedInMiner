@@ -5,20 +5,37 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedInMiner", "LinkedInMi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}"
 EndProject
+Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "DBScripts", "DBScripts\DBScripts.mdproj", "{6B1CE496-49D8-4C27-A8C3-EE5576448A02}"
+EndProject
+Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "BashScript", "BashScript\BashScript.mdproj", "{14992B46-D084-47EF-8A0A-D0031335E0AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
+		Default|Any CPU = Default|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}.Debug|x86.ActiveCfg = Debug|x86
 		{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}.Debug|x86.Build.0 = Debug|x86
 		{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}.Release|x86.ActiveCfg = Release|x86
 		{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}.Release|x86.Build.0 = Release|x86
+		{14992B46-D084-47EF-8A0A-D0031335E0AE}.Debug|x86.ActiveCfg = Default|Any CPU
+		{14992B46-D084-47EF-8A0A-D0031335E0AE}.Debug|x86.Build.0 = Default|Any CPU
+		{14992B46-D084-47EF-8A0A-D0031335E0AE}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{14992B46-D084-47EF-8A0A-D0031335E0AE}.Default|Any CPU.Build.0 = Default|Any CPU
+		{14992B46-D084-47EF-8A0A-D0031335E0AE}.Release|x86.ActiveCfg = Default|Any CPU
+		{14992B46-D084-47EF-8A0A-D0031335E0AE}.Release|x86.Build.0 = Default|Any CPU
 		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Debug|x86.Build.0 = Debug|Any CPU
 		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Release|x86.ActiveCfg = Release|Any CPU
 		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Release|x86.Build.0 = Release|Any CPU
+		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Debug|x86.ActiveCfg = Default|Any CPU
+		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Debug|x86.Build.0 = Default|Any CPU
+		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Default|Any CPU.Build.0 = Default|Any CPU
+		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Release|x86.ActiveCfg = Default|Any CPU
+		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Release|x86.Build.0 = Default|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = LinkedInMiner\LinkedInMiner.csproj

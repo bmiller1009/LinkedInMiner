@@ -6,20 +6,21 @@ namespace LinkedInMiner
 {
 	public class Data
 	{	
-		public Data ()
+		private Data ()
 		{
 		}
 		
-		public int ExecuteScalar(string sqlText)
+		public static int ExecuteScalar(string sqlText)
 		{  
 		   try
 		   {	
 			   long retVal;
 			   	
-		       using(var dbcon = new MySqlConnection(Global.ConnectionString))
+		       using(var dbconn = new MySqlConnection(Global.ConnectionString))
 			   {
-					dbcon.Open();
-			        using (var dbcmd = dbcon.CreateCommand())
+					dbconn.Open();
+					
+			        using (var dbcmd = dbconn.CreateCommand())
 					{
 			      		dbcmd.CommandText = sqlText;
 						dbcmd.ExecuteNonQuery();
@@ -28,7 +29,7 @@ namespace LinkedInMiner
 						retVal = (long)dbcmd.ExecuteScalar();
 					}
 					
-					dbcon.Close();
+					dbconn.Close();
 				}
 				
 				return Convert.ToInt32(retVal);
@@ -40,4 +41,3 @@ namespace LinkedInMiner
 		}
 	}
 }
-

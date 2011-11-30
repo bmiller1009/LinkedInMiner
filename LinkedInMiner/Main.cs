@@ -5,43 +5,42 @@ namespace LinkedInMiner
 {	
 	class MainClass
 	{	
-		private static FileLogger mFileLogger;
-		private static Logger mLogger;
+		private static FileLogger _fileLogger;
+		private static Logger _logger;
 		
 		public static void Main (string[] args)
 		{	
 			try
 			{	
+				var mainURL = Global.LinkedInURL + "wvmx/profile";
+				
 				InitializeLog();
 				
-				var crawler = new Crawler(Global.LinkedInURL + "wvmx/profile", mLogger);
-				crawler.Post(null);
+				var crawler = new Crawler(_logger);
+				crawler.Post(null, mainURL);
 			}
 			catch(Exception ex)
 			{
 				Console.WriteLine(ex);
-				mLogger.AddLogMessage(ex);
+				_logger.AddLogMessage(ex);
 			}
 			finally
 			{	
-				mLogger.AddLogMessage("Scraping Complete.");
-				mFileLogger.Terminate();
+				_logger.AddLogMessage("Scraping Complete.");
+				_fileLogger.Terminate();
 			}
 		}
 		
 		private static void InitializeLog()
 		{	
-			// instantiate the logger
-        	mLogger = Logger.Instance;
-        
-			// instantiate the log observer that will write to disk
-       		mFileLogger = new FileLogger(Global.LogFilePath);
-        	mFileLogger.Init();
+        	_logger = Logger.Instance;
+       
+       		_fileLogger = new FileLogger(Global.LogFilePath);
+        	_fileLogger.Init();
         	
-			// Register mFileLogger as a Logger observer.
-        	mLogger.RegisterObserver(mFileLogger);
+        	_logger.RegisterObserver(_fileLogger);
 			
-			mLogger.AddLogMessage("Begin Scraping...");
+			_logger.AddLogMessage("Begin Scraping...");
 		}
 	}
 }

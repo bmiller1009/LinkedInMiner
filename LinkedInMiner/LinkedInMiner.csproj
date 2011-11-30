@@ -9,7 +9,6 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>LinkedInMiner</RootNamespace>
     <AssemblyName>LinkedInMiner</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,8 +40,7 @@
     <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <Reference Include="System.Data" />
     <Reference Include="System.Configuration" />
-    <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="MySql.Data">
       <HintPath>..\..\..\MonoLibs\mysql-connector-net-6.3.6-noinstall\v2\mysql.data.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -51,10 +49,15 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="EntryRecord.cs" />
     <Compile Include="Crawler.cs" />
-    <Compile Include="AnonTagParser.cs" />
-    <Compile Include="TagParser.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="Tags\AnonTagParser.cs" />
+    <Compile Include="Tags\SemiknownTagParser.cs" />
+    <Compile Include="Tags\IdentTagParser.cs" />
+    <Compile Include="Tags\TagParser.cs" />
+    <Compile Include="Tags\TagFactory.cs" />
+    <Compile Include="Helpers\ParserHelper.cs" />
+    <Compile Include="Helpers\DBHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -66,5 +69,9 @@
       <Project>{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}</Project>
       <Name>Logging</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tags\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

@@ -1,22 +1,12 @@
 using System;
 using System.IO;
-using System.Text;
 
 public class FileLogger: ILogger
 {
     private string _folderPath = String.Empty;
-	private string _mFileName = "Log.txt";
+	private string _fileName = "Log.txt";
+    private StreamWriter _logFile;
 	
-    private StreamWriter _mLogFile;
-	
-    public string FileName
-    {
-        get 
-        { 
-            return _mFileName; 
-        }
-    }
-    
 	public FileLogger(string folderPath)
     {
         _folderPath = folderPath;
@@ -27,27 +17,30 @@ public class FileLogger: ILogger
 	
     public void Init()
     {
-		string directoryName = @_folderPath + "/" + "DailyScrape_" + DateTime.Now.ToString().Replace('/', '.').Replace(':', '.');
-		Directory.CreateDirectory(directoryName);
-		string fileName = @directoryName + "/" + _mFileName;
+		var directoryName = @_folderPath + "/" + "DailyScrape_" + DateTime.Now.ToString().Replace('/', '.').Replace(':', '.');
 		
-		//File.Create(fileName);
+		Directory.CreateDirectory(directoryName);
+		
+		var fileName = @directoryName + "/" + _fileName;
+		
 		using(var fs = File.Create(fileName))
 		{
 			fs.Close();
 		}
 		
-        _mLogFile = new StreamWriter(fileName, true);
+        _logFile = new StreamWriter(fileName, true);
     }
+	
     public void Terminate()
     {	
-        _mLogFile.Close();
-		_mLogFile.Dispose();
+        _logFile.Close();
+		_logFile.Dispose();
     }
+	
     public void ProcessLogMessage(string logMessage)
     {
     	// FileLogger implements the ProcessLogMessage method by
     	// writing the incoming message to a file.
-        _mLogFile.WriteLine(logMessage);
+        _logFile.WriteLine(logMessage);
     }
 }
