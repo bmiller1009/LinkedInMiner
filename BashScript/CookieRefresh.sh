@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #This script grabs the authorization token from linkedin
-LYNX_COOKIES="/home/brza/.lynx_cookies"
+LYNX_COOKIES="%REPLACE_W_LYNX_COOKIE_PATH%"
 WGET_COOKIES="cookies_wget.txt"
 URL="www.linkedin.com"
 JSESSION_TEXT="jsession.txt"
 LEO_AUTH_TOKEN_TEXT="leo_auth_token.txt"
-LYNX_CMD_SCRIPT="/home/brza/bin/get_linkedin_credentials/linkedin_script.txt"
-LINKEDIN_MINER_DIR="$HOME/bin/LinkedInMiner"
+LYNX_CMD_SCRIPT="%REPLACE_WITH_PATH_TO_LYNX_LINKEDIN_AUTO_LOGIN_SCRIPT%"
+LINKEDIN_MINER_DIR="%REPLACE_WITH_APPLICATION_DIRECTORY%"
 
 #Remove any existing session cookies
 touch $LYNX_COOKIES
