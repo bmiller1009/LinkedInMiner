@@ -4,10 +4,11 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Logging;
 using LinkedInMiner.Tags;
+using Globals;
 
 namespace LinkedInMiner
 {
-	class Crawler
+	public class Crawler
 	{	
 		private string _cookie = String.Empty;
 		private Logger _logger;

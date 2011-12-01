@@ -1,7 +1,7 @@
 using System;
 using System.Configuration;
 
-namespace LinkedInMiner
+namespace Globals
 {
 	public class Global
 	{	

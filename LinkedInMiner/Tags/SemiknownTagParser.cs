@@ -1,10 +1,11 @@
 using System;
 using Logging;
 using LinkedInMiner.Helpers;
+using Globals;
 
 namespace LinkedInMiner.Tags
 {
-	public class SemiKnownTagParser : TagParser
+	internal class SemiKnownTagParser : TagParser
 	{	
 		private const string SEMI_REGEX_PATTERN = "<a href='/wvmx/profile/redherring?[^>]*>.*</a>";
 		

@@ -1,10 +1,12 @@
 using System;
 using Logging;
+using LinkedInMiner;
+using Globals;
 
-namespace LinkedInMiner
-{	
+namespace Driver
+{
 	class MainClass
-	{	
+	{
 		private static FileLogger _fileLogger;
 		private static Logger _logger;
 		

@@ -5,21 +5,19 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}</ProjectGuid>
+    <ProjectGuid>{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Logging</RootNamespace>
-    <AssemblyName>Logging</AssemblyName>
-    <Description>Lightweight logging framework.  Code was adapted from 
-sample on the internet:
-
-http://www.codeproject.com/KB/trace/ObserverLogging.aspx</Description>
+    <RootNamespace>Globals</RootNamespace>
+    <AssemblyName>Globals</AssemblyName>
+    <Description>Small class which maps app.config key value pairs to a 
+descriptive string.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
+    <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -34,12 +32,11 @@ http://www.codeproject.com/KB/trace/ObserverLogging.aspx</Description>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="ILogger.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="FileLogger.cs" />
+    <Compile Include="Global.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,7 +4,7 @@ using LinkedInMiner.Helpers;
 
 namespace LinkedInMiner
 {
-	public class EntryRecord
+	internal class EntryRecord
 	{		
 		public EntryRecord(Logger logger)
 		{

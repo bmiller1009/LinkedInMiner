@@ -1,14 +1,26 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="LinkedInMiner/Crawler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Logging/AssemblyInfo.cs">
     <Files>
-      <File FileName="LinkedInMiner/Crawler.cs" Line="18" Column="16" />
+      <File FileName="DBScripts/make_db.sql" Line="9" Column="36" />
+      <File FileName="Driver/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="Driver/Main.cs" Line="48" Column="2" />
+      <File FileName="Driver/app.config" Line="1" Column="1" />
+      <File FileName="Globals/Global.cs" Line="1" Column="1" />
+      <File FileName="Globals/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="LinkedInMiner/Helpers/DBHelper.cs" Line="5" Column="10" />
+      <File FileName="Logging/FileLogger.cs" Line="1" Column="1" />
+      <File FileName="Logging/ILogger.cs" Line="1" Column="1" />
+      <File FileName="Logging/Logger.cs" Line="18" Column="17" />
+      <File FileName="Logging/AssemblyInfo.cs" Line="28" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
+        <State expanded="True">
           <Option id="ShowVersionControlOverlays" value="True" />
           <Option id="ShowAllFiles" value="False" />
+          <Node name="LinkedInMiner" expanded="True" />
+          <Node name="Logging" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

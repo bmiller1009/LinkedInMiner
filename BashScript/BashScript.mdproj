@@ -7,6 +7,13 @@
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{14992B46-D084-47EF-8A0A-D0031335E0AE}</ProjectGuid>
+    <Description>This application requires a fresh leo_auth_token and jsession id
+from LinkedIn on every login.  This script is simply my quick
+and dirty attempt to get these values.  Please note that the
+script leverages Lynx, so this must obviously be installed for
+the script to run corrrectly.  FWIW this is the exact script I have
+scheduled to run in cron when I run my app on my Linux 
+server.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
     <OutputPath>.</OutputPath>

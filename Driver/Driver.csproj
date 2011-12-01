@@ -5,19 +5,21 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>LinkedInMiner</RootNamespace>
-    <AssemblyName>LinkedInMiner</AssemblyName>
-    <Description>This is the mining engine and persistence portion of the
-project</Description>
+    <ProjectGuid>{361AC7BC-7DC3-42BB-A958-D6489622811F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Driver</RootNamespace>
+    <AssemblyName>Driver</AssemblyName>
+    <Description>Command-Line executable used to demonstrate the LinkedIn
+Mining app as well as the Logger.  Be sure that the app.config
+file is set up correctly.  You will need a database connection
+string, a path to your cookie file, and a path to your log.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
+    <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
@@ -34,26 +36,20 @@ project</Description>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\MonoLibs\mysql-connector-net-6.3.6-noinstall\v2\mysql.data.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="EntryRecord.cs" />
-    <Compile Include="Crawler.cs" />
-    <Compile Include="Data.cs" />
-    <Compile Include="Tags\AnonTagParser.cs" />
-    <Compile Include="Tags\SemiknownTagParser.cs" />
-    <Compile Include="Tags\IdentTagParser.cs" />
-    <Compile Include="Tags\TagParser.cs" />
-    <Compile Include="Tags\TagFactory.cs" />
-    <Compile Include="Helpers\ParserHelper.cs" />
-    <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="Main.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinkedInMiner\LinkedInMiner.csproj">
+      <Project>{0BD5A1C0-D0E8-47F7-822A-595F705BBBCB}</Project>
+      <Name>LinkedInMiner</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logging\Logging.csproj">
       <Project>{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}</Project>
       <Name>Logging</Name>
@@ -62,9 +58,5 @@ project</Description>
       <Project>{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}</Project>
       <Name>Globals</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tags\" />
-    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

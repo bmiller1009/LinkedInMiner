@@ -13,7 +13,7 @@ LINKEDIN_MINER_DIR="%REPLACE_WITH_APPLICATION_DIRECTORY%"
 touch $LYNX_COOKIES
 rm $LYNX_COOKIES
 
-#Use wget to retrive the jsession id for the login
+#Use wget to retrieve the jsession id for the login
 wget --keep-session-cookies --save-cookies $WGET_COOKIES $URL
 
 #Extract the jsession id into a file

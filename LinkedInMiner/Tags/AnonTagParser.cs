@@ -3,7 +3,7 @@ using Logging;
 
 namespace LinkedInMiner.Tags
 {
-	public class AnonTagParser : TagParser
+	internal class AnonTagParser : TagParser
 	{	
 		public AnonTagParser (string html, Logger logger) : base(html, logger)
 		{

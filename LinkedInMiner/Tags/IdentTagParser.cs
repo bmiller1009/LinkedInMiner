@@ -1,10 +1,11 @@
 using System;
 using Logging;
 using LinkedInMiner.Helpers;
+using Globals;
 
 namespace LinkedInMiner.Tags
 {
-	public class IdentTagParser : TagParser
+	internal class IdentTagParser : TagParser
 	{	
 		private int? _semiKnownID;
 		

@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace LinkedInMiner.Helpers
 {
-	public class ParserHelper
+	internal class ParserHelper
 	{
 		private ParserHelper ()
 		{

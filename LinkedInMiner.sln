@@ -9,6 +9,10 @@ Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "DBScripts", "DBScripts\DBSc
 EndProject
 Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "BashScript", "BashScript\BashScript.mdproj", "{14992B46-D084-47EF-8A0A-D0031335E0AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver", "Driver\Driver.csproj", "{361AC7BC-7DC3-42BB-A958-D6489622811F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globals", "Globals\Globals.csproj", "{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -30,6 +34,18 @@ Global
 		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Debug|x86.Build.0 = Debug|Any CPU
 		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Release|x86.ActiveCfg = Release|Any CPU
 		{1ADB6584-31F5-4F1F-BB38-6F41F27F5E13}.Release|x86.Build.0 = Release|Any CPU
+		{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}.Debug|x86.Build.0 = Debug|Any CPU
+		{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}.Release|x86.ActiveCfg = Release|Any CPU
+		{1D1D13E3-32C8-49F6-B95E-7CEE55D4DB87}.Release|x86.Build.0 = Release|Any CPU
+		{361AC7BC-7DC3-42BB-A958-D6489622811F}.Debug|x86.ActiveCfg = Debug|x86
+		{361AC7BC-7DC3-42BB-A958-D6489622811F}.Debug|x86.Build.0 = Debug|x86
+		{361AC7BC-7DC3-42BB-A958-D6489622811F}.Default|Any CPU.ActiveCfg = Debug|x86
+		{361AC7BC-7DC3-42BB-A958-D6489622811F}.Default|Any CPU.Build.0 = Debug|x86
+		{361AC7BC-7DC3-42BB-A958-D6489622811F}.Release|x86.ActiveCfg = Release|x86
+		{361AC7BC-7DC3-42BB-A958-D6489622811F}.Release|x86.Build.0 = Release|x86
 		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Debug|x86.ActiveCfg = Default|Any CPU
 		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Debug|x86.Build.0 = Default|Any CPU
 		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Default|Any CPU.ActiveCfg = Default|Any CPU
@@ -38,6 +54,6 @@ Global
 		{6B1CE496-49D8-4C27-A8C3-EE5576448A02}.Release|x86.Build.0 = Default|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = LinkedInMiner\LinkedInMiner.csproj
+		StartupItem = Driver\Driver.csproj
 	EndGlobalSection
 EndGlobal

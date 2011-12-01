@@ -7,6 +7,8 @@
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6B1CE496-49D8-4C27-A8C3-EE5576448A02}</ProjectGuid>
+    <Description>Series of files and queries to set up the database where mined
+data is ultimately persisted to.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
     <OutputPath>.</OutputPath>

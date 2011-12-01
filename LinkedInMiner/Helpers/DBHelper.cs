@@ -2,7 +2,7 @@ using System;
 
 namespace LinkedInMiner.Helpers
 {
-	public class DBHelper
+	internal class DBHelper
 	{
 		private DBHelper ()
 		{

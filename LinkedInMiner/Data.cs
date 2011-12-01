@@ -1,10 +1,11 @@
 using System;
 using System.Data;
 using MySql.Data.MySqlClient;
+using Globals;
 
 namespace LinkedInMiner
 {
-	public class Data
+	internal class Data
 	{	
 		private Data ()
 		{

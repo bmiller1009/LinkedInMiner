@@ -3,7 +3,7 @@ using Logging;
 
 namespace LinkedInMiner.Tags
 {
-	public abstract class TagParser
+	internal abstract class TagParser
 	{	
 		protected enum TagType : byte
 		{
@@ -33,7 +33,7 @@ namespace LinkedInMiner.Tags
 			get{return _html;}
 		}
 		
-		public EntryRecord EntryRecord
+		internal EntryRecord EntryRecord
 		{
 			get{return _entryRecord;}
 		}
