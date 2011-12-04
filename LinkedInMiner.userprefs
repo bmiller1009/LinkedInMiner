@@ -1,34 +1,19 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Driver/AssemblyInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LinkedInMiner/Crawler.cs">
     <Files>
-      <File FileName="DBScripts/make_db.sql" Line="9" Column="36" />
-      <File FileName="Driver/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="Driver/Main.cs" Line="48" Column="2" />
-      <File FileName="Driver/app.config" Line="9" Column="17" />
-      <File FileName="Globals/Global.cs" Line="1" Column="1" />
-      <File FileName="Globals/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/Helpers/DBHelper.cs" Line="5" Column="10" />
-      <File FileName="Logging/FileLogger.cs" Line="1" Column="1" />
-      <File FileName="Logging/ILogger.cs" Line="1" Column="1" />
-      <File FileName="Logging/Logger.cs" Line="18" Column="17" />
-      <File FileName="Logging/AssemblyInfo.cs" Line="28" Column="1" />
-      <File FileName="LinkedInMiner/EntryRecord.cs" Line="7" Column="10" />
-      <File FileName="LinkedInMiner/Data.cs" Line="4" Column="15" />
-      <File FileName="LinkedInMiner/Crawler.cs" Line="58" Column="5" />
-      <File FileName="LinkedInMiner/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/Tags/AnonTagParser.cs" Line="13" Column="9" />
-      <File FileName="LinkedInMiner/Tags/IdentTagParser.cs" Line="17" Column="9" />
-      <File FileName="LinkedInMiner/Tags/SemiknownTagParser.cs" Line="17" Column="41" />
-      <File FileName="LinkedInMiner/Tags/TagFactory.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/Tags/TagParser.cs" Line="41" Column="9" />
-      <File FileName="LinkedInMiner/Helpers/ParserHelper.cs" Line="20" Column="26" />
+      <File FileName="LinkedInMiner/Crawler.cs" Line="128" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True" selected="True">
           <Option id="ShowVersionControlOverlays" value="True" />
-          <Option id="ShowAllFiles" value="False" />
+          <Option id="ShowAllFiles" value="True" />
+          <Node name="Driver" expanded="True" />
+          <Node name="LinkedInMiner" expanded="True">
+            <Node name="Tags" expanded="True" />
+          </Node>
+          <Node name="Logging" expanded="True" />
         </State>
       </Pad>
     </Pads>

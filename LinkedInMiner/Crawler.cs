@@ -13,12 +13,37 @@ namespace LinkedInMiner
 		private string _cookie = String.Empty;
 		private Logger _logger;
 		
+		/// <summary>
+		/// Initializes a new instance of the <see cref="LinkedInMiner.Crawler"/> class.
+		/// </summary>
+		/// <param name='logger'>
+		/// Global Logger class for recording all actions within a HTML crawl.
+		/// </param>
+		/// <exception cref='NullReferenceException'>
+		/// Thrown if logger object is null
+		/// </exception>
 		public Crawler(Logger logger)
-		{
+		{	
+			if(logger == null)
+				throw new NullReferenceException("Logger object cannot be null");
+			
 			_cookie = File.ReadAllText(Global.CookiePath);
 			_logger = logger;
 		}
 		
+		/// <summary>
+		/// HTTP request/response which pulls the html for a specific user list on the "Who's Viewed Your Profile" section of the LinkedIn homepage.  
+		/// </summary>
+		/// <param name='semiKnownID'>
+		/// This represents the primary key of a semi-known viewer of your profile.  It will only be populated if the viewer is semi-known, otherwise
+		/// it will be null
+		/// </param>
+		/// <param name='url'>
+		/// The URL which is being requested
+		/// </param>
+		/// <exception cref='Exception'>
+		/// Represents errors that occur during application execution.
+		/// </exception>
 		public void Post(int? semiKnownID, string url) 
 		{
        	    try
@@ -66,6 +91,16 @@ namespace LinkedInMiner
 			}
         }
 		
+		/// <summary>
+		/// Loops through all of the contacts found in the requested html text
+		/// </summary>
+		/// <param name='html'>
+		/// Requested html
+		/// </param>
+		/// <param name='semiKnownID'>
+		/// This represents the primary key of a semi-known viewer of your profile.  It will only be populated if the viewer is semi-known, otherwise
+		/// it will be null
+		/// </param>
 		private void GetContacts(string html, int? semiKnownID)
 		{	
 			try
@@ -87,6 +122,16 @@ namespace LinkedInMiner
 			}
 		}
 		
+		/// <summary>
+		/// Determines the contact type (known, semi-known or anonymous) then parses and persists the captured data
+		/// </summary>
+		/// <param name='htmlMatch'>
+		/// Requested html
+		/// </param>
+		/// <param name='semiKnownID'>
+		/// This represents the primary key of a semi-known viewer of your profile.  It will only be populated if the viewer is semi-known, otherwise
+		/// it will be null
+		/// </param>
 		private void DetermineParse(string htmlMatch, int? semiKnownID)
 		{	
 			_logger.AddLogMessage("Parsing contact...");
