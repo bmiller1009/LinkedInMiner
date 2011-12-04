@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="LinkedInMiner/Crawler.cs">
     <Files>
-      <File FileName="LinkedInMiner/Crawler.cs" Line="128" Column="31" />
+      <File FileName="LinkedInMiner/Crawler.cs" Line="39" Column="23" />
+      <File FileName="LinkedInMiner/Data.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,9 +11,7 @@
           <Option id="ShowVersionControlOverlays" value="True" />
           <Option id="ShowAllFiles" value="True" />
           <Node name="Driver" expanded="True" />
-          <Node name="LinkedInMiner" expanded="True">
-            <Node name="Tags" expanded="True" />
-          </Node>
+          <Node name="LinkedInMiner" expanded="True" />
           <Node name="Logging" expanded="True" />
         </State>
       </Pad>

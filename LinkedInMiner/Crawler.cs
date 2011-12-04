@@ -7,7 +7,16 @@ using LinkedInMiner.Tags;
 using Globals;
 
 namespace LinkedInMiner
-{
+{	
+	/// <summary>
+	/// Core engine of the application.  Takes in url, makes the request, parses and persists the html in the response.
+	/// </summary>
+	/// <exception cref='ArgumentNullException'>
+	/// Is thrown when an argument passed to a method is invalid because it is <see langword="null" /> .
+	/// </exception>
+	/// <exception cref='Exception'>
+	/// Represents errors that occur during application execution.
+	/// </exception>
 	public class Crawler
 	{	
 		private string _cookie = String.Empty;
@@ -19,13 +28,13 @@ namespace LinkedInMiner
 		/// <param name='logger'>
 		/// Global Logger class for recording all actions within a HTML crawl.
 		/// </param>
-		/// <exception cref='NullReferenceException'>
-		/// Thrown if logger object is null
+		/// <exception cref='ArgumentNullException'>
+		/// Is thrown when an argument passed to a method is invalid because it is <see langword="null" /> .
 		/// </exception>
 		public Crawler(Logger logger)
 		{	
 			if(logger == null)
-				throw new NullReferenceException("Logger object cannot be null");
+				throw new ArgumentNullException("logger", "Logger object cannot be null");
 			
 			_cookie = File.ReadAllText(Global.CookiePath);
 			_logger = logger;
