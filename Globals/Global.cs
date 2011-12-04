@@ -2,7 +2,10 @@ using System;
 using System.Configuration;
 
 namespace Globals
-{
+{	
+	/// <summary>
+	/// Global class to abstract app.config content
+	/// </summary>
 	public class Global
 	{	
 		public static string ConnectionString

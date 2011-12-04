@@ -19,9 +19,12 @@ namespace LinkedInMiner
 	/// </exception>
 	public class Crawler
 	{	
+		#region Member Variables
 		private string _cookie = String.Empty;
 		private Logger _logger;
+		#endregion
 		
+		#region Constructors
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LinkedInMiner.Crawler"/> class.
 		/// </summary>
@@ -39,7 +42,9 @@ namespace LinkedInMiner
 			_cookie = File.ReadAllText(Global.CookiePath);
 			_logger = logger;
 		}
+		#endregion
 		
+		#region Public Methods
 		/// <summary>
 		/// HTTP request/response which pulls the html for a specific user list on the "Who's Viewed Your Profile" section of the LinkedIn homepage.  
 		/// </summary>
@@ -99,12 +104,14 @@ namespace LinkedInMiner
 				throw;
 			}
         }
+		#endregion
 		
+		#region Private Methods
 		/// <summary>
 		/// Loops through all of the contacts found in the requested html text
 		/// </summary>
 		/// <param name='html'>
-		/// Requested html
+		/// Retrieved html
 		/// </param>
 		/// <param name='semiKnownID'>
 		/// This represents the primary key of a semi-known viewer of your profile.  It will only be populated if the viewer is semi-known, otherwise
@@ -135,7 +142,7 @@ namespace LinkedInMiner
 		/// Determines the contact type (known, semi-known or anonymous) then parses and persists the captured data
 		/// </summary>
 		/// <param name='htmlMatch'>
-		/// Requested html
+		/// Matched html
 		/// </param>
 		/// <param name='semiKnownID'>
 		/// This represents the primary key of a semi-known viewer of your profile.  It will only be populated if the viewer is semi-known, otherwise
@@ -148,13 +155,12 @@ namespace LinkedInMiner
 			try
 			{
 				var tp = TagFactory.GetTagParser(htmlMatch, _logger, semiKnownID);
-				tp.ParseTag();
-				tp.EntryRecord.Save();
+				tp.SaveTagContents();
 				
 				var semiKnownTagParser = tp as SemiKnownTagParser;
 				
 				if(semiKnownTagParser != null)
-					Post(tp.EntryRecord.MainEntryID, semiKnownTagParser.SemiKnownURL);
+					Post(semiKnownTagParser.MainEntryID, semiKnownTagParser.SemiKnownURL);
 				
 				Console.WriteLine(tp);
 			}
@@ -167,5 +173,6 @@ namespace LinkedInMiner
 			
 			_logger.AddLogMessage("Parsing contact complete...");
 		}
+		#endregion
 	}
 }

@@ -3,14 +3,26 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Logging
-{
+{	
+	/// <summary>
+	/// Lightweight logging framework.  Adapted from an example found on the internet:
+	/// http://www.codeproject.com/KB/trace/ObserverLogging.aspx
+	/// </summary>
     public class Logger
-    {
-        #region Data
-        
+	{
+		#region Member Variables
 		private static object _lock = new object();
         private static Logger _logger = null;
-
+		private List<ILogger> _observers;
+		#endregion
+		
+		#region Singleton
+		/// <summary>
+		/// Gets the instance.
+		/// </summary>
+		/// <value>
+		/// The instance.
+		/// </value>
         public static Logger Instance
         {
             get 
@@ -39,29 +51,35 @@ namespace Logging
 				
                 return _logger;
             }
-        }
-
-        private List<ILogger> _observers;
-
-		#endregion Data
+		}
+		#endregion
 
         #region Constructor
-		
         private Logger()
         {
             _observers = new List<ILogger>();
         }
-		
-		#endregion Constructor
+		#endregion
 
         #region Public Methods
-		
+		/// <summary>
+		/// Registers the observer.
+		/// </summary>
+		/// <param name='observer'>
+		/// Observer.
+		/// </param>
         public void RegisterObserver(ILogger observer)
         {
             if (!_observers.Contains(observer))
                 _observers.Add (observer);
         }
-
+		
+		/// <summary>
+		/// Adds the log message.
+		/// </summary>
+		/// <param name='message'>
+		/// Message.
+		/// </param>
         public void AddLogMessage(string message)
         {
             // Apply some basic formatting like the current timestamp
@@ -70,7 +88,13 @@ namespace Logging
             foreach (var observer in _observers)
             	observer.ProcessLogMessage(formattedMessage);
 		}
-
+		
+		/// <summary>
+		/// Adds the log message.
+		/// </summary>
+		/// <param name='ex'>
+		/// Exception
+		/// </param>
         public void AddLogMessage(Exception ex)
         {
             var message = new StringBuilder(ex.Message);
@@ -86,7 +110,6 @@ namespace Logging
 
             AddLogMessage(message.ToString());
         }
-		
-		#endregion Public Methods
+		#endregion
     }
 }

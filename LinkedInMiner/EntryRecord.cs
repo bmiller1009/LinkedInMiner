@@ -3,37 +3,43 @@ using Logging;
 using LinkedInMiner.Helpers;
 
 namespace LinkedInMiner
-{
+{	
+	/// <summary>
+	/// Maps to a single row of data in the database.
+	/// </summary>
 	internal class EntryRecord
-	{		
+	{	
+		#region Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="LinkedInMiner.EntryRecord"/> class.
+		/// </summary>
+		/// <param name='logger'>
+		/// Logger.
+		/// </param>
 		public EntryRecord(Logger logger)
 		{
 			_logger = logger;
 		}
-	
-		private int _mainEntryID = 0;
-		private byte _entryTypeID = 0;
+		#endregion
+		
+		#region Member Variables
 		private string _entryName = String.Empty;
-		private string _profileURL = String.Empty;
 		private string _entryJobTitle = String.Empty;
 		private string _entryLocation = String.Empty;
 		private string _entryRegion = String.Empty;
-		private DateTime _scrapeDate = DateTime.MinValue;
-		private int? _semiKnownMainEntryID = null;
-		private int? _sharesGroups = null;
-		private int? _sharesConnections = null;
 		
 	    private Logger _logger = null;
-	
+		#endregion
+		
+		#region Properties
 		public int MainEntryID
 		{
-			get{return _mainEntryID;}
+			get; private set;
 		}
 		
 		public byte EntryTypeID
 		{
-			get{return _entryTypeID;}
-			set{_entryTypeID = value;}
+			get; set;
 		}
 		
 		public string EntryName
@@ -44,8 +50,7 @@ namespace LinkedInMiner
 		
 		public string ProfileURL
 		{
-			get{return _profileURL;}
-			set{_profileURL = value;}
+			get; set;
 		}
 		
 		public string EntryJobTitle
@@ -66,34 +71,38 @@ namespace LinkedInMiner
 			set{_entryRegion = value;}
 		}
 		
-		private DateTime ScrapeDate
+		public DateTime ScrapeDate
 		{
-			get{return _scrapeDate;}
+			get; private set;
 		}
 		
 		public int? SemiKnownMainEntryID
 		{
-			get{return _semiKnownMainEntryID;}
-			set{_semiKnownMainEntryID = value;}
+			get; set;
 		}
 		
 		public int? SharesGroups
 		{
-			get{return _sharesGroups;}
-			set{_sharesGroups = value;}
+			get; set;
 		}
 	
 		public int? SharesConnections
 		{
-			get{return _sharesConnections;}
-			set{_sharesConnections = value;}
+			get; set;
 		}
+		#endregion
 		
+		#region Overrides
 		public override string ToString ()
 		{
 			return string.Format ("[EntryRecord: MainEntryID={0}, EntryTypeID={1}, EntryName={2}, ProfileURL={3}, EntryJobTitle={4}, EntryLocation={5}, EntryRegion={6}, SemiKnownMainEntryID={7}, SharesGroups={8}, SharesConnections={9}]", MainEntryID, EntryTypeID, EntryName, ProfileURL, EntryJobTitle, EntryLocation, EntryRegion, SemiKnownMainEntryID, SharesGroups, SharesConnections);
 		}
+		#endregion
 		
+		#region Public Methods
+		/// <summary>
+		/// Save this instance.
+		/// </summary>
 		public void Save()
 		{   
 			try
@@ -103,20 +112,20 @@ namespace LinkedInMiner
 							 "shares_groups, shares_connections) " +
 							 "VALUES " +
 					         "(" +
-								  _entryTypeID + "," +
+								  EntryTypeID + "," +
 								  DBHelper.SQLFormatString(EntryName, true) +
-								  DBHelper.SQLFormatString(_profileURL, true) +
+								  DBHelper.SQLFormatString(ProfileURL, true) +
 								  DBHelper.SQLFormatString(EntryJobTitle, true) + 
 								  DBHelper.SQLFormatString(EntryLocation, true) + 
 								  DBHelper.SQLFormatString(EntryRegion, true) +
-								  _semiKnownMainEntryID + "," +
-								  _sharesGroups + "," +
-								  _sharesConnections +
+								  SemiKnownMainEntryID + "," +
+								  SharesGroups + "," +
+								  SharesConnections +
 							 ")";
 			
 				_logger.AddLogMessage("Saving Entry Record.  SQL = '" + sql + '"');
-				_mainEntryID = Data.ExecuteScalar(sql);
-				_logger.AddLogMessage("Saving Entry Record Complete.  Main Entry ID ='" + _mainEntryID + "'");
+				MainEntryID = Data.ExecuteScalar(sql);
+				_logger.AddLogMessage("Saving Entry Record Complete.  Main Entry ID ='" + MainEntryID + "'");
 			}
 			catch(Exception ex)
 			{	
@@ -125,5 +134,6 @@ namespace LinkedInMiner
 				throw;
 			}
 		}
+		#endregion
 	}
 }
