@@ -24,6 +24,11 @@ string, a path to your cookie file, and a path to your log.</Description>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <Externalconsole>true</Externalconsole>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="cp -f /Users/bfm1009/Projects/LinkedinCookie/Driver.exe.config /Users/bfm1009/Projects/LinkedInMiner/Driver/bin/Debug/" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>

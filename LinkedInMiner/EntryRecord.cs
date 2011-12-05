@@ -118,9 +118,9 @@ namespace LinkedInMiner
 								  DBHelper.SQLFormatString(EntryJobTitle, true) + 
 								  DBHelper.SQLFormatString(EntryLocation, true) + 
 								  DBHelper.SQLFormatString(EntryRegion, true) +
-								  SemiKnownMainEntryID + "," +
-								  SharesGroups + "," +
-								  SharesConnections +
+								  "'" + SemiKnownMainEntryID + "'," +
+								  "'" + SharesGroups + "'," +
+								  "'" + SharesConnections + "'" +
 							 ")";
 			
 				_logger.AddLogMessage("Saving Entry Record.  SQL = '" + sql + '"');

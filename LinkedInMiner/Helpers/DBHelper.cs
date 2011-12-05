@@ -27,14 +27,13 @@ namespace LinkedInMiner.Helpers
 		/// Include comma.
 		/// </param>
 		public static string SQLFormatString(string s, bool includeComma)
-		{
+		{	
+			var comma = (includeComma) ? "," : String.Empty;
+			
 			if (String.IsNullOrEmpty(s))
-				return " NULL ";
-			else
-			{	
-				var comma = (includeComma) ? "," : String.Empty;
+				return " NULL" + comma;
+			else		
 				return "'" + s.Replace("'", "''").TrimEnd() + "'" + comma;
-			}
 		}
 		#endregion
 	}
