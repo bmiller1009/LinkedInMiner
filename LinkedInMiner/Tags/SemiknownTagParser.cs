@@ -1,6 +1,7 @@
 using System;
 using Logging;
 using LinkedInMiner.Helpers;
+using LinkedInMiner.Data;
 using Globals;
 
 namespace LinkedInMiner.Tags

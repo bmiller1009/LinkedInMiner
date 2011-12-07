@@ -1,30 +1,18 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="LinkedInMiner/Tags/IdentTagParser.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LinkedInMiner/ConnectionFactory.cs">
     <Files>
-      <File FileName="LinkedInMiner/Crawler.cs" Line="25" Column="13" />
-      <File FileName="LinkedInMiner/Data.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/Tags/TagParser.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/Tags/AnonTagParser.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/Tags/SemiknownTagParser.cs" Line="4" Column="15" />
-      <File FileName="LinkedInMiner/Tags/IdentTagParser.cs" Line="19" Column="3" />
+      <File FileName="LinkedInMiner/ConnectionFactory.cs" Line="18" Column="3" />
       <File FileName="LinkedInMiner/Tags/TagFactory.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/EntryRecord.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/Helpers/DBHelper.cs" Line="1" Column="1" />
-      <File FileName="LinkedInMiner/Helpers/ParserHelper.cs" Line="1" Column="1" />
-      <File FileName="Globals/Global.cs" Line="1" Column="1" />
-      <File FileName="Driver/Main.cs" Line="1" Column="1" />
-      <File FileName="Logging/FileLogger.cs" Line="1" Column="1" />
-      <File FileName="Logging/ILogger.cs" Line="1" Column="1" />
-      <File FileName="Logging/Logger.cs" Line="1" Column="1" />
+      <File FileName="LinkedInMiner/Data.cs" Line="1" Column="1" />
+      <File FileName="Driver/app.config" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
+        <State expanded="True" selected="True">
           <Option id="ShowVersionControlOverlays" value="True" />
-          <Option id="ShowAllFiles" value="True" />
-          <Node name="Driver" expanded="True" selected="True" />
-          <Node name="Globals" expanded="True" />
+          <Option id="ShowAllFiles" value="False" />
+          <Node name="Driver" expanded="True" />
           <Node name="LinkedInMiner" expanded="True">
             <Node name="Tags" expanded="True" />
           </Node>

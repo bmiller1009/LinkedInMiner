@@ -41,9 +41,7 @@ project</Description>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="EntryRecord.cs" />
     <Compile Include="Crawler.cs" />
-    <Compile Include="Data.cs" />
     <Compile Include="Tags\AnonTagParser.cs" />
     <Compile Include="Tags\SemiknownTagParser.cs" />
     <Compile Include="Tags\IdentTagParser.cs" />
@@ -51,6 +49,9 @@ project</Description>
     <Compile Include="Tags\TagFactory.cs" />
     <Compile Include="Helpers\ParserHelper.cs" />
     <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="Data\ConnectionFactory.cs" />
+    <Compile Include="Data\Data.cs" />
+    <Compile Include="Data\EntryRecord.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -66,5 +67,6 @@ project</Description>
   <ItemGroup>
     <Folder Include="Tags\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>

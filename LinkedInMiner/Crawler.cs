@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Logging;
 using LinkedInMiner.Tags;
+using LinkedInMiner.Data;
 using Globals;
 
 namespace LinkedInMiner

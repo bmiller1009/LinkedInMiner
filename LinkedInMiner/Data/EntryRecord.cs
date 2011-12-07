@@ -2,7 +2,7 @@ using System;
 using Logging;
 using LinkedInMiner.Helpers;
 
-namespace LinkedInMiner
+namespace LinkedInMiner.Data
 {	
 	/// <summary>
 	/// Maps to a single row of data in the database.
@@ -124,7 +124,7 @@ namespace LinkedInMiner
 							 ")";
 			
 				_logger.AddLogMessage("Saving Entry Record.  SQL = '" + sql + '"');
-				MainEntryID = Data.ExecuteScalar(sql);
+				MainEntryID = Data.ExecuteScalar(sql, _logger);
 				_logger.AddLogMessage("Saving Entry Record Complete.  Main Entry ID ='" + MainEntryID + "'");
 			}
 			catch(Exception ex)
